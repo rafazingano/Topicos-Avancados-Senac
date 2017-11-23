@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="assets/css/onsenui.css">
+  <link rel="stylesheet" href="assets/css/onsen-css-components.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/js/vue.js"></script>  
+
+  <script src="assets/js/onsenui.min.js"></script>
+  <script src="assets/js/vue-onsenui.js"></script>
+
+</head>
+<body>
+
+<ons-navigator swipeable id="myNavigator" page="page1.html"></ons-navigator>
+
+<template id="page1.html">
+  <ons-page id="page1">
+    <ons-toolbar>
+      <div class="center">VUE JS / ONSEN UI</div>
+    </ons-toolbar>
+    <ons-button id="push-button-2">INTRODUCAO</ons-button>
+    <ons-button id="push-button-3">INSTALACAO</ons-button>
+    <ons-button id="push-button-4">DEMO</ons-button>
+    <img src="assets/images/cover.jpg" style="width: 100%; margin-top: 10px;height: 90%;">
+  </ons-page>
+</template>
+
+<template id="page2.html">
+  <ons-page id="page2">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Voltar</ons-back-button></div>
+      <div class="center"></div>
+    </ons-toolbar>
+    <p>
+      Vue.js é uma estrutura progressiva para a criação de interfaces de usuário,destacando-se das demais, que possuem uma estrutura monolíticas.Inicialmente projetado para ser incrementalmente adotável.
+    </p>
+    <p>
+      Sua biblioteca principal possuía o foco em trabalhar com a camada de visualização,facilitando sua inserção e integração com outras bibliotecas ou projetos existentes.Paralelo a esta descrição, pode-se destacar que o Vue.js possui perfeita capacidade de agregar aos aplicativos mais sofisticados através de uma única página  quando utilizado de forma correta com ferramentas modernas e bibliotecas de suporte.
+    </p>
+  </ons-page>
+</template>
+
+<template id="page3.html">
+  <ons-page id="page3">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Voltar</ons-back-button></div>
+      <div class="center"></div>
+    </ons-toolbar>
+
+   
+
+
+<H2>Compatibilidade</H2>
+<p>
+O Vue.js não possui suporte para IE8 e versões anteriores, pelo fato de utilizar recursos ECMAScript 5, não compatíveis. É possível visualizar outras compatibilidades no Github https://github.com/vuejs/vue/issues.
+ </p>
+ <h2>
+VueDevTools
+</h2>
+<p>
+Para facilitar a utilização do debug em seu navegador é recomendado que utilize o VueDevTools.
+Você pode adicionar no Chrome Web Store, esta ferramenta facilita para realizar a inspeção e depuração de sua aplicação
+</p>
+<p>
+1° Acesse o Chrome Web Store  no link : https://chrome.google.com/webstore/category/extensions
+</p>
+<p>
+2° Para baixar a extensão acesse o link: https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
+</p>
+<p>
+ 
+
+Node .js
+Node.js é um mecanismo de JavaScript , utiliza um modelo de I/O não bloqueado de eventos, o que torna mais performático por ser mais leve e eficiente.
+</p>
+<p>
+O node possui  o maior ecossistema de biblioteca opensource do mundo 
+
+Para realizar o download da aplicação acesse o https://nodejs.org/en/.
+
+</p>
+<h2>
+
+NPM
+</h2>
+
+<p>
+
+O NPM é o método de instalação recomendado ao construir aplicativos de grande escala com o Vue. Ele combina bem com os pacotes de módulos, como Webpack ou Browserify. O Vue também fornece ferramentas de acompanhamento para a criação de Componentes de Arquivo Único.
+Para realizar a sua instalação abra o prompt de comando do windows e insira os seguinte comando:
+</p>
+<p>
+//Para instalar o vue.js<br>
+npm install vue
+</p>
+
+<h2>
+CLI
+
+</h2>
+<p>
+O Vue.js possibilita um CLI oficial para aplicações de página única para a construçaõ de rápidos “andaimes”. Ele fornece configurações de compilação incluídas nas baterias para um fluxo de trabalho moderno. Leva apenas alguns minutos para serem executados com versões hot-recload, lint-on-save e ready-ready:
+</p>
+<p>
+
+# install vue-cli<br>
+$ npm install --global vue-cli
+</p>
+<p>
+
+# crie um novo projeto usando o modelo "webpack"<br>
+$ vue init webpack my-project
+</p>
+<p>
+
+# instale dependências e vá!<br>
+$ cd my-project
+</p>
+<p>
+
+instalação $ npm<br>
+$ npm executado dev
+</p>
+<p>
+
+A CLI assume o conhecimento prévio de Node.js e as ferramentas de compilação associadas. Para quem está iniciando ou possui pouco conhecimento com o desenvolvimento do Vue ou front-end é recomendado iniciar sua aplicação sem a utilização do CLI.
+
+
+    </p>
+
+  </ons-page>
+</template>
+
+<template id="page4.html">
+  <ons-page id="page4">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Voltar</ons-back-button></div>
+      <div class="center"></div>
+    </ons-toolbar>
+
+    <p>demos</p>
+
+  </ons-page>
+</template>
+
+
+<script>
+
+  document.addEventListener('init', function(event) {
+    var page = event.target;
+
+    if (page.id === 'page1') {
+      page.querySelector('#push-button-2').onclick = function() {
+        document.querySelector('#myNavigator').pushPage('page2.html', {data: {title: 'INTRODUCAO'}});
+      };
+      page.querySelector('#push-button-3').onclick = function() {
+        document.querySelector('#myNavigator').pushPage('page3.html', {data: {title: 'INSTALACAO'}});
+      };
+      page.querySelector('#push-button-4').onclick = function() {
+        document.querySelector('#myNavigator').pushPage('page4.html', {data: {title: 'DEMO - FORM'}});
+      };
+    } else 
+    if (page.id === 'page2') {
+      page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+    }else 
+    if (page.id === 'page3') {
+      page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+    }else 
+    if (page.id === 'page4') {
+      page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+    }
+
+  });
+
+  </script>
+
+ 
+</body>
+</html>
